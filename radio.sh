@@ -30,7 +30,7 @@ esac
 
 		echo "Compressing radiopackage ..."
 		pushd temp
-		zip -r ../$OUTDIR/radio-cm-7-$PRODUCTNAME-$VERSION-unsigned.zip ./
+		zip -r ../$OUTDIR/radio-cm-9-$PRODUCTNAME-$VERSION-unsigned.zip ./
 		popd
 
 		echo "Signing radiopackage ..."
