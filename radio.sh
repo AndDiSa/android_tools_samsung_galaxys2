@@ -9,7 +9,7 @@ then
 
 case $PRODUCT in
         galaxys2 )
-            PRODUCTNAME="GalaxyS2"
+            PRODUCTNAME="SGS2"
             ;;
 esac
 
@@ -34,11 +34,11 @@ esac
 		popd
 
 		echo "Signing radiopackage ..."
-		java -jar SignApk/signapk.jar SignApk/certificate.pem SignApk/key.pk8 $OUTDIR/radio-cm-7-$PRODUCTNAME-$VERSION-unsigned.zip $OUTDIR/radio-cm-7-$PRODUCTNAME-$VERSION-signed.zip
+		java -jar SignApk/signapk.jar SignApk/platform.x509.pem SignApk/platform.pk8 $OUTDIR/radio-cm-9-$PRODUCTNAME-$VERSION-unsigned.zip $OUTDIR/radio-cm-9-$PRODUCTNAME-$VERSION-signed.zip
 
-		rm $OUTDIR/radio-cm-7-$PRODUCTNAME-$VERSION-unsigned.zip
+		rm $OUTDIR/radio-cm-9-$PRODUCTNAME-$VERSION-unsigned.zip
 		rm -rf temp/
-		echo "radio-cm-7-$PRODUCTNAME-$VERSION-signed.zip is at $OUTDIR"
+		echo "radio-cm-9-$PRODUCTNAME-$VERSION-signed.zip is at $OUTDIR"
 		echo "Done."
 	else
 		echo "Unsupported radio version: $VERSION"
@@ -47,7 +47,7 @@ esac
 else
 	echo -e "\n";
 	echo "USAGE: radio.sh DEVICE RADIO";
-	echo "EXAMPLE: radio.sh galaxys2 KG2";
+	echo "EXAMPLE: radio.sh galaxys2 LP6";
 	echo "Supported Devices: galaxys2";
 	echo "Supported Versions:";
 	ls radio/modems/
